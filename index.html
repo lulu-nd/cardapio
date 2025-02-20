@@ -47,14 +47,29 @@
                     </div><!-- row mt-2 -->
                 </div><!-- fim row mt-2 -->
                 <!-- seleção de produtos -->
-                <div class="col-md-6" v-if="etapa = = 1">
-                    <!-- tipo de pão -->
-                     <div class="row mt-2">
-                        <div class="col">
-                            Tipo de Pão
+                <div class="col-md-6" v-if="etapa == 1">
+
+                 <!-- tipo de pão -->
+                  <div class="row mt-2">
+                    <div class="col">
+
+                        <div class="card">
+                            <div class="card-header">
+                                Tipo de Pão
+                            </div>
                         </div>
-                     </div>
-                </div>
+                        <div class="card-body">
+
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input">
+                                <label class="form-check-label"> Gergelim </label>
+                            </div>
+                        </div>
+
+                    </div>
+                  </div>
+
+                 
             </div> <!-- fim row -->
         </div> <!-- fim app -->
     </div> <!-- instancia vue -->
