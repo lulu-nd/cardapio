@@ -80,6 +80,7 @@
                     <!-- FIM TIPO do Pão -->
                                  
                     <!-- Salada -->
+
                     <div class="row mt-2">
                         <div class="col">
                             <div class="card">
@@ -89,7 +90,7 @@
                                 
                                 <div class="card-body">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" value="alface" v-model="">
+                                        <input type="checkbox" class="form-check-input" value="alface" v-model="inputSalada">
 
                                         <label class="form-check-label">Alface</label>
                                     </div>
@@ -97,9 +98,20 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> <!-- fim salada -->
 
-                    
+                    <!-- Molho -->
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div>
+                                    <div class="card-header">
+                                        Molho
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div> <!-- Fim col md -->
 
                                 
@@ -114,7 +126,8 @@
             el: '#app',
 
             data: {  // atributos // propriedades
-                inputTipoPao: '',
+                inputTipoPao: '', //* radio = obrigatorio*//
+                inputSalada: [], //*checkbox = opcional*//
 
                 etapa: 1,
                 
@@ -132,6 +145,14 @@
                             return ['imagens/padrao/pao_superior.png', 'imagens/padrao/pao_inferior.png']
                     }
 
+                },
+
+                alface () {
+                    if (this.inputSalada.includes('alface')) {
+                        return 'imagens/alface.png'
+                    }
+
+                    return 'imagens/padrao/alface.png'
                 },
                 
             },
