@@ -377,7 +377,7 @@
                             <button type="button" class="btn btn-warning" @click="etapa = 1">Repetir Pedido</button>
     
     
-                            <button type="button" class="btn btn-success" @click="novoPedido">Novo Pedido</button>
+                            <button type="button" class="btn btn-success" @click="novoPedido()">Novo Pedido</button>
     
     
                         </div>
@@ -400,6 +400,8 @@
             el: '#app',
 
             data: {
+                etapa: 1,
+                
                 inputTipoPao: '', // quando for aspas = *radio* = obrigatório
                 inputSalada: [], // quando for colchetes = *checkbox* = opcional
                 inputMolhos: [],
@@ -409,9 +411,9 @@
                 
                 inputNome:'',
                 inputEndereco:'',
-
+                novoPedidoAssincrono: null,
                 
-                etapa: 1,
+                
             },
 
             // iMAGENS dos ingredientes ( propriedades computadas, reativas ) // a "," fecha função
@@ -560,9 +562,19 @@
                         this.inputQueijo = []
                         this.inputBurger = ''
 
-
+                        this.inputNome = ''
+                        this.inputEndereco = ''
+                       
                     },
             },
+
+            watch:{
+                etapa(novoValor){
+                    if(novoValor == 1) {
+                        clearTimeout(this.novoPedidoAssincrono)
+                    }
+                }
+            }
 
         })
 
