@@ -369,15 +369,15 @@
                         </div>
                     </div>
 
-                    <div class="row nt-2">
+                    <div class="row mt-2">
 
 
                         <div class="col d-flex justify-content-between">
     
-                            <button type="button" class="btn btn-warning" @click="etapa -= 1">Repetir Pedido</button>
+                            <button type="button" class="btn btn-warning" @click="etapa = 1">Repetir Pedido</button>
     
     
-                            <button type="button" class="btn btn-success" @click="etapa = 1">Novo Pedido</button>
+                            <button type="button" class="btn btn-success" @click="novoPedido">Novo Pedido</button>
     
     
                         </div>
@@ -547,7 +547,21 @@
                         else {
                             alert('você tem que informar seu nome e seu endereço')
                         }
-                    }
+                    },
+
+                    novoPedido() {
+
+                        this.etapa = 1
+
+                        this.inputTipoPao = ''
+                        this.inputSalada = []
+                        this.inputMolhos = []
+                        this.inputAcompan = []
+                        this.inputQueijo = []
+                        this.inputBurger = ''
+
+
+                    },
             },
 
         })
