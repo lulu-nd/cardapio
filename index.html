@@ -348,6 +348,46 @@
 
                 </div> <!-- fim etapa 2 -->
 
+                 <!-- etapa 3 -->
+                 <div class="col-md-6" v-if="etapa == 2">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+
+                                <div class="card-header">
+                                   Pedido Confirmado
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="mb-3">
+                                       Seu pedido foi confirmado,aguarde em sua mesa até levarmos para você
+                                    </div>   
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row nt-2">
+
+
+                        <div class="col d-flex justify-content-between">
+    
+                            <button type="button" class="btn btn-warning" @click="etapa -= 1">Repetir Pedido</button>
+    
+    
+                            <button type="button" class="btn bnt-success" @click="etapa = 1">Novo Pedido</button>
+    
+    
+                        </div>
+    
+    
+                    </div>
+    
+
+                </div>  <!-- fim etapa 3 -->
+
             </div><!-- Fim Row -->
         </div> <!-- Fim APP -->
     </div> <!-- Fim DIV container --> 
